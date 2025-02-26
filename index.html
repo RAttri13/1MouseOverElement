@@ -13,6 +13,24 @@
     padding: 0;
     box-sizing: border-box
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid red
+}
+div{
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    margin: 50px;
+    border: 2px solid red;
+    background-color: yellow
+}
 canvas{
     display: block;
     background-color: aqua;
@@ -20,16 +38,24 @@ canvas{
 cursor{
     color: aliceblue;
 }
+
     </style>
 
 </head>
 <body>
-    <canvas>
-
-    </canvas>
+<div id="container"></div>
+        <!-- <canvas> </canvas> -->
     
- <script src="./index.js">
-// <!-- <script src="./index.1.js"> -->
+ <!-- <script src="./index.js"> -->
+ <!-- <script src="./index.1.js"> -->
+    <script>
+        const cont= document.getElementById("container");
+        // console.log(cont.clientWidth)
+        // console.log(cont.offsetWidth)
+        // console.log(cont.width)
+        console.log(window.innerWidth)
+        console.log(window.outerWidth)
+        console.log(cont.width)
 </script>    
 </body>
 </html>

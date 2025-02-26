@@ -12,7 +12,7 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function randomFloat(min, max) {
+function randomFloat(min, max) { 
   return Math.random() * (max - min) + min;
 }
 
@@ -27,9 +27,9 @@ function setUp() {
 
     const ballElement = document.createElement('div');
     ballElement.style.position = 'absolute';
-    ballElement.style.width == ballElement.style.height;
-    ballElement.style.width == `${randomSize}px`
-    ballElement.style.transition =`randomSize 5s`;
+    // ballElement.style.width == ballElement.style.height; // not in use
+    // ballElement.style.width == `${randomSize}px`
+    // ballElement.style.transition =`randomSize 5s`;
 
     ballElement.style.backgroundColor = randomColor;
     ballElement.style.borderRadius = '50%';  
@@ -66,8 +66,10 @@ class Ball {
 
   update() {
     const distance = Math.sqrt((this.x - mouseX) ** 2 + (this.y - mouseY) ** 2);
-    
-    if (distance < this.radius * 1.2) {  
+    // debugger
+    // console.log(this.radius,distance)
+    // if (distance < this.radius * 1.2) {  
+    if (distance < this.radius ) {  
       this.size = this.originalSize * 1.4;
     } else {
       this.size = this.originalSize;
@@ -92,14 +94,14 @@ class Ball {
   }
 }
 
-function update() {
+function updates() {
   for (let ball of balls) {
     ball.update();
   }
 }
 
 function loop() {
-  update();
+  updates();
   requestAnimationFrame(loop);
 }
 
